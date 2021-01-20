@@ -1,11 +1,16 @@
 import styled from 'styled-components'
+import { colors } from '../utils/theme'
 
 const Button = (props) => {
   const CustomButton = styled.button`
-    background-color: ${({ theme }) => theme.colors.aqua};
+    background-color: ${colors(props.color)};
     width: 100px;
     border: none;
     border-radius: 5px;
+
+    &:nth-child(2) {
+      margin-left: 40px;
+    }
 
     > img {
       width: 100%;

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Background from '../components/Background'
 import Button from '../components/Button'
+import { colors } from '../utils/theme'
 
 const IndexWrapper = styled.div`
   height: 100%;
@@ -18,8 +19,8 @@ const HeaderWrapper = styled.div`
 `
 
 const HeaderText = styled.div`
-  color: ${({ theme }) => theme.colors.salmon};
-  text-shadow: 3px 2px ${({ theme }) => theme.colors.denim};
+  color: ${colors('salmon')};
+  text-shadow: 3px 2px ${colors('denim')};
   text-align: center;
   font-size: 60px;
   font-weight: bold;
@@ -40,10 +41,10 @@ const Index = () => {
         <HeaderWrapper>
           <HeaderText>Hello, I'm RJ Shoemaker</HeaderText>
           <HeaderLinkWrapper>
-            <Button>
+            <Button color='aqua'>
               <img src='/images/logos/GitHub_Logo.png' />
             </Button>
-            <Button>
+            <Button color='hotpink'>
               <img src='/images/logos/linkedin-logo.png' />
             </Button>
           </HeaderLinkWrapper>
