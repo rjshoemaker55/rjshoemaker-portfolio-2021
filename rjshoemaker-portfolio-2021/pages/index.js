@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Background from '../components/Background'
+import Button from '../components/Button'
 
 const IndexWrapper = styled.div`
   height: 100%;
@@ -25,6 +26,12 @@ const HeaderText = styled.div`
   margin: auto;
 `
 
+const HeaderLinkWrapper = styled.div`
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+`
+
 const Index = () => {
   return (
     <>
@@ -32,6 +39,14 @@ const Index = () => {
       <IndexWrapper>
         <HeaderWrapper>
           <HeaderText>Hello, I'm RJ Shoemaker</HeaderText>
+          <HeaderLinkWrapper>
+            <Button>
+              <img src='/images/logos/GitHub_Logo.png' />
+            </Button>
+            <Button>
+              <img src='/images/logos/linkedin-logo.png' />
+            </Button>
+          </HeaderLinkWrapper>
         </HeaderWrapper>
       </IndexWrapper>
     </>
