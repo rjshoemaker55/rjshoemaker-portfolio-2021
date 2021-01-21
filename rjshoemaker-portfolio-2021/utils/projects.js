@@ -5,7 +5,8 @@ const projects = [
     description: 'A simple, elegant hotel search app.',
     repo: 'https://github.com/rjshoemaker55/my-concierge',
     deployed: 'https://my-concierge0.herokuapp.com/',
-    gif: '/images/gifs/my-concierge.gif'
+    gif: '/images/gifs/my-concierge.gif',
+    tech: ['React', 'Express', 'Node.js']
   },
   {
     id: 1,
@@ -13,7 +14,8 @@ const projects = [
     description: 'Freelance site built for an audio business.',
     repo: 'https://github.com/rjshoemaker55/handmade-audio2',
     deployed: 'http://www.handmade-audio.com',
-    gif: '/images/gifs/handmade-audio.gif'
+    gif: '/images/gifs/handmade-audio.gif',
+    tech: ['React']
   },
   {
     id: 2,
@@ -21,7 +23,8 @@ const projects = [
     description: 'A simplistic, basic bill tracking app.',
     repo: 'https://github.com/rjshoemaker55/bill-keeper',
     deployed: 'https://bill-keeper-rjs.herokuapp.com/',
-    gif: '/images/gifs/bill-keeper.gif'
+    gif: '/images/gifs/bill-keeper.gif',
+    tech: ['React', 'GraphQL', 'PostgreSQL']
   },
   {
     id: 3,
@@ -29,7 +32,8 @@ const projects = [
     description: 'My portfolio built in 2019.',
     repo: 'https://github.com/rjshoemaker55/rjs-portfolio',
     deployed: 'https://www.rjshoemaker.com',
-    gif: '/images/gifs/rj-shoemaker.gif'
+    gif: '/images/gifs/rj-shoemaker.gif',
+    tech: ['React', 'Bootstrap']
   },
   {
     id: 4,
@@ -37,7 +41,8 @@ const projects = [
     description: 'A collaborative bootcamp project to caption and share gifs.',
     repo: 'https://github.com/JoeySuc89/Cap-Dat-Gif',
     deployed: 'https://rjerykevanjoe.herokuapp.com/',
-    gif: '/images/gifs/cap-dat-gif.gif'
+    gif: '/images/gifs/cap-dat-gif.gif',
+    tech: ['React', 'Express', 'MongoDB', 'Node.js']
   }
 ]
 
