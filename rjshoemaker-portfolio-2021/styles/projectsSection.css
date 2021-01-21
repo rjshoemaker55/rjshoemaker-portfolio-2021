@@ -1,16 +1,20 @@
 .projects-section-wrapper {
-  width: 80%;
   height: 600px;
   margin: auto;
   display: flex;
+  width: 95%;
+  flex-direction: column;
 }
 
 .project-list {
-  flex: 1;
-  margin-right: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .project-display {
+  order: 2;
   flex: 3;
 }
 
@@ -21,5 +25,33 @@
 .project-display-tech {
   flex: 1;
   justify-content: flex-end;
-  text-align: right;
+  text-align: left;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .project-display-tech {
+    text-align: right;
+    margin-top: 0;
+  }
+
+  .project-list {
+    flex: 1;
+  }
+}
+
+/* landscape tablets and up */
+@media only screen and (min-width: 992px) {
+  .projects-section-wrapper {
+    width: 80%;
+    flex-direction: row;
+  }
+
+  .project-list {
+    flex: 1;
+    margin-right: 18px;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 18px;
+  }
 }
