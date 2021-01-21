@@ -5,10 +5,11 @@ const Button = (props) => {
   const color = colors(props.color)
   const CustomButton = styled.button`
     background-color: ${color};
-    width: 9em;
+    width: 7em;
     border: 3px solid ${color};
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 0px 10px;
+    line-height: 1;
     transition-duration: 0.3s;
 
     &:hover {

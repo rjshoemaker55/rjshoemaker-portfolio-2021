@@ -17,7 +17,7 @@ const HeaderWrapper = styled.div`
   flex: 1;
   position: relative;
   width: 100%;
-  padding: 50px 10px;
+  padding: 25px 10px;
 `
 
 const HeaderText = styled.div`
@@ -26,7 +26,7 @@ const HeaderText = styled.div`
   padding-bottom: 3px;
   display: table;
   text-align: center;
-  font-size: 60px;
+  font-size: 57px;
   font-weight: bold;
   margin: auto;
 

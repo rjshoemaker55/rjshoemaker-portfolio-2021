@@ -23,20 +23,25 @@ const ProjectsSection = () => {
   `
 
   const ProjectListItem = styled.div`
-    color: ${colors('blue')};
+    color: ${colors('purple')};
     font-weight: bold;
-    font-size: 28px;
+    font-size: 24px;
     margin-bottom: 10px;
-    border: 2px ${colors('blue')} solid;
+    border: 2px ${colors('purple')} solid;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
     transition-duration: 0.3s;
 
     &:hover {
-      background-color: ${colors('blue')};
+      background-color: ${colors('purple')};
       color: black;
       cursor: pointer;
+    }
+
+    &:nth-child(${currentProject.id + 1}) {
+      background-color: ${colors('purple')};
+      color: black;
     }
   `
 
@@ -78,6 +83,8 @@ const ProjectsSection = () => {
     height: auto;
     z-index: -10;
     position: relative;
+    border: ${colors('blue')} 2px solid;
+    border-radius: 5px;
   `
 
   return (
@@ -93,7 +100,7 @@ const ProjectsSection = () => {
         ))}
       </ProjectsList>
       <ProjectDisplay>
-        <ProjectDisplayGif src='/images/gifs/my-concierge.gif' />
+        <ProjectDisplayGif src={currentProject.gif} />
         <ProjectDisplayHeader>
           <ProjectDisplayTitle>{currentProject.name}</ProjectDisplayTitle>
           <ProjectDisplayDesc>{currentProject.description}</ProjectDisplayDesc>
