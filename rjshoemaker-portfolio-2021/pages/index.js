@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Background from '../components/Background'
 import Button from '../components/Button'
 import ProjectsSection from '../components/ProjectsSection'
+import BioSection from '../components/BioSection'
 import { colors } from '../utils/theme'
 
 const HeaderText = styled.div`
@@ -58,6 +59,7 @@ const Index = () => {
           </HeaderLinkWrapper>
         </div>
         <ProjectsSection />
+        <BioSection />
       </div>
     </>
   )
