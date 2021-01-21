@@ -2,82 +2,58 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import projects from '../utils/projects'
 import { colors } from '../utils/theme'
-
-const ProjectsSectionWrapper = styled.div`
-  width: 80%;
-  height: 600px;
-  margin: auto;
-  display: flex;
-`
-
-const ProjectsList = styled.div`
-  flex: 1;
-  margin-right: 18px;
-`
-
-const ProjectDisplay = styled.div`
-  flex: 3;
-`
+import LazyImage from '../components/LazyImage'
 
 const ProjectListItem = styled.div`
-  color: ${colors('purple')};
+  color: rgb(${colors.purple});
   font-weight: bold;
   font-size: 24px;
   margin-bottom: 10px;
-  border: 2px ${colors('purple')} solid;
+  border: 2px rgb(${colors.purple}) solid;
   border-radius: 5px;
   padding: 5px;
   text-align: center;
   transition-duration: 0.3s;
 
   &:hover {
-    background-color: ${colors('purple')};
+    background-color: rgb(${colors.purple});
     color: black;
     cursor: pointer;
   }
 
   &:nth-child(${(props) => props.currentProject.id + 1}) {
-    background-color: ${colors('purple')};
+    background-color: rgb(${colors.purple});
     color: black;
   }
 `
 
 const ProjectDisplayFooter = styled.div`
-  border: 2px solid ${colors('yellow')};
+  border: 2px solid rgb(${colors.yellow});
   border-radius: 5px;
   margin-top: 10px;
   padding: 10px;
   display: flex;
 `
 
-const ProjectDisplayInfo = styled.div`
-  flex: 3;
-`
-
-const ProjectDisplayTech = styled.div`
-  flex: 1;
-  justify-content: flex-end;
-  text-align: right;
-`
-
 const TechHeader = styled.div`
   display: block;
-  color: ${colors('blue')};
+  color: rgb ${colors.yellow};
   font-weight: bold;
+  font-size: 18px;
 `
 
 const ProjectTechItem = styled.div`
-  color: white;
+  color: rgb(${colors.red});
 `
 
 const ProjectDisplayTitle = styled.div`
   font-weight: bold;
-  color: ${colors('yellow')};
+  color: rgb(${colors.yellow});
   font-size: 25px;
 `
 
 const ProjectDisplayDesc = styled.div`
-  color: ${colors('purple')};
+  color: rgb(${colors.purple});
 `
 
 const ProjectDisplayRepo = styled.div`
@@ -85,23 +61,34 @@ const ProjectDisplayRepo = styled.div`
 
   > a {
     text-decoration: underline;
+    transition-duration: 0.3s;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
   }
 `
 
 const ProjectDisplayDeployed = styled.div`
-  color: ${colors('green')};
+  color: rgb(${colors.green});
 
   > a {
     text-decoration: underline;
+    transition-duration: 0.3s;
+
+    &:hover {
+      background-color: rgb(${colors.green});
+      color: black;
+    }
   }
 `
 
 const ProjectDisplayGif = styled.img`
   width: 100%;
   height: auto;
-  z-index: -10;
   position: relative;
-  border: ${colors('blue')} 2px solid;
+  border: rgb(${colors.blue}) 2px solid;
   border-radius: 5px;
   opacity: 0.85;
 `
@@ -110,8 +97,8 @@ const ProjectsSection = () => {
   const [currentProject, setCurrentProject] = useState(projects[0])
 
   return (
-    <ProjectsSectionWrapper>
-      <ProjectsList>
+    <div className='projects-section-wrapper'>
+      <div className='project-list'>
         {projects.map((project) => (
           <ProjectListItem
             key={project.id}
@@ -121,32 +108,42 @@ const ProjectsSection = () => {
             {project.name}
           </ProjectListItem>
         ))}
-      </ProjectsList>
-      <ProjectDisplay>
-        <ProjectDisplayGif src={currentProject.gif} />
+      </div>
+      <div className='project-display'>
+        <LazyImage src={currentProject.gif} />
+        {/* <ProjectDisplayGif src={currentProject.gif} /> */}
         <ProjectDisplayFooter>
-          <ProjectDisplayInfo>
+          <div className='project-display-info'>
             <ProjectDisplayTitle>{currentProject.name}</ProjectDisplayTitle>
             <ProjectDisplayDesc>
               {currentProject.description}
             </ProjectDisplayDesc>
             <ProjectDisplayRepo>
-              Github: <a href={currentProject.repo}>{currentProject.repo}</a>
+              Github:{' '}
+              <a href={currentProject.repo} target='_blank' rel='noreferrer'>
+                {currentProject.repo}
+              </a>
             </ProjectDisplayRepo>
             <ProjectDisplayDeployed>
               Visit Deployed:{' '}
-              <a href={currentProject.deployed}>{currentProject.deployed}</a>
+              <a
+                href={currentProject.deployed}
+                target='_blank'
+                rel='noreferrer'
+              >
+                {currentProject.deployed}
+              </a>
             </ProjectDisplayDeployed>
-          </ProjectDisplayInfo>
-          <ProjectDisplayTech>
+          </div>
+          <div className='project-display-tech'>
             <TechHeader>Technologies used:</TechHeader>
             {currentProject.tech.map((tech) => (
               <ProjectTechItem key={tech}>{tech}</ProjectTechItem>
             ))}
-          </ProjectDisplayTech>
+          </div>
         </ProjectDisplayFooter>
-      </ProjectDisplay>
-    </ProjectsSectionWrapper>
+      </div>
+    </div>
   )
 }
 

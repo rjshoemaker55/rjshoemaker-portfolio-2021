@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import { colors } from '../utils/theme'
 
-const CustomButton = styled.button`
-  background-color: ${(props) => colors(props.color)};
+const CustomButton = styled.a`
+  background-color: rgb(${(props) => colors[props.color]});
   width: 7em;
-  border: 3px solid ${(props) => colors(props.color)};
+  border: 3px solid rgb(${(props) => colors[props.color]});
   border-radius: 5px;
   padding: 0px 10px;
   line-height: 1;
@@ -21,6 +21,7 @@ const CustomButton = styled.button`
 
   &:nth-child(2) {
     margin-left: 40px;
+    padding-top: 7px;
   }
 
   > img {
@@ -30,7 +31,12 @@ const CustomButton = styled.button`
 `
 const Button = (props) => {
   return (
-    <CustomButton color={props.color} href={props.href}>
+    <CustomButton
+      color={props.color}
+      href={props.href}
+      rel='noreferrer'
+      target='_blank'
+    >
       {props.children}
     </CustomButton>
   )

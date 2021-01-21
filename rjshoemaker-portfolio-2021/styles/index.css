@@ -1,0 +1,16 @@
+.index-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  z-index: 9999;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-wrapper {
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  width: 100%;
+  padding: 25px 10px;
+}

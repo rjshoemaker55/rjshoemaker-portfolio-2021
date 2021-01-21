@@ -42,7 +42,7 @@ const projects = [
     repo: 'https://github.com/JoeySuc89/Cap-Dat-Gif',
     deployed: 'https://rjerykevanjoe.herokuapp.com/',
     gif: '/images/gifs/cap-dat-gif.gif',
-    tech: ['React', 'Express', 'MongoDB', 'Node.js']
+    tech: ['React', 'Express', 'MySQL', 'Node.js']
   }
 ]
 
