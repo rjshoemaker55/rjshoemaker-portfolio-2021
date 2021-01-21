@@ -3,7 +3,7 @@ import { colors } from '../utils/theme'
 
 const CustomButton = styled.a`
   background-color: rgb(${(props) => colors[props.color]});
-  width: 7em;
+  width: 6em;
   border: 3px solid rgb(${(props) => colors[props.color]});
   border-radius: 5px;
   padding: 0px 10px;
@@ -27,6 +27,10 @@ const CustomButton = styled.a`
   > img {
     width: 100%;
     height: auto;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 7em;
   }
 `
 const Button = (props) => {

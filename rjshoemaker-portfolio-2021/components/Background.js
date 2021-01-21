@@ -27,7 +27,7 @@ const Background = (props) => {
             straight: false
           },
           number: {
-            value: 20
+            value: 35
           },
           opacity: {
             value: 0.5
