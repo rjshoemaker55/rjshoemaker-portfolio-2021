@@ -10,20 +10,25 @@ const HeaderText = styled.div`
   padding-bottom: 3px;
   display: table;
   text-align: center;
-  font-size: 55px;
+  font-size: 45px;
   font-weight: bold;
   margin: auto;
 
   /* Tables and large phones */
   @media only screen and (min-width: 600px) {
     border-bottom: 3px solid rgb(${colors.green});
+    font-size: 55px;
   }
 `
 
 const HeaderLinkWrapper = styled.div`
-  margin-top: 25px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
+
+  @media only screen and (min-width: 768px) {
+    margin-top: 25px;
+  }
 `
 
 const Index = () => {
