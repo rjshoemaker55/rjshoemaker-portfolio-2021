@@ -1,16 +1,15 @@
 import styled from 'styled-components'
+import projects from '../utils/projects'
 
 const ProjectsSection = () => {
   const ProjectsSectionWrapper = styled.div`
     width: 80%;
     height: 600px;
-    background-color: white;
     margin: auto;
     display: flex;
   `
 
   const ProjectsList = styled.div`
-    background-color: blue;
     flex: 1;
   `
 
@@ -19,9 +18,19 @@ const ProjectsSection = () => {
     flex: 3;
   `
 
+  const ProjectListItem = styled.div`
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+  `
+
   return (
     <ProjectsSectionWrapper>
-      <ProjectsList>'hello'</ProjectsList>
+      <ProjectsList>
+        {projects.map((project) => (
+          <ProjectListItem key={project.id}>{project.name}</ProjectListItem>
+        ))}
+      </ProjectsList>
       <ProjectDisplay>'hi'</ProjectDisplay>
     </ProjectsSectionWrapper>
   )
